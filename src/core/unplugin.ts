@@ -4,7 +4,10 @@ import { compress } from "./compress";
 
 export default createUnplugin<Options | undefined>((options) => ({
   name: "unplugin-compress",
+  enforce: "post",
   buildEnd() {
-    compress(options);
+    setTimeout(async () => {
+      await compress(options);
+    }, 1000);
   },
 }));

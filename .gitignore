@@ -12,3 +12,5 @@ dist
 *.tar
 *.gz
 *.tgz
+
+.DS_Store
