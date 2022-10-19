@@ -16,7 +16,7 @@ describe("normalizerSource", () => {
       source: "dist",
       outDir: "./",
       adapter: "zip",
-      formatter: "{{source}}.{{adapter}}",
+      formatter: "{{name}}.{{ext}}",
     });
   });
   it("source to Source[]", () => {
@@ -31,7 +31,7 @@ describe("normalizerSource", () => {
       source: "dist",
       outDir: "./",
       adapter: "zip",
-      formatter: "{{source}}.{{adapter}}",
+      formatter: "{{name}}.{{ext}}",
     });
   });
   it("apply globalOptions", () => {
