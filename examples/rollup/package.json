@@ -12,6 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "rollup": "^3.2.3",
-    "unplugin-compression": "workspace:^0.0.2"
+    "unplugin-compression": "workspace:*"
   }
 }

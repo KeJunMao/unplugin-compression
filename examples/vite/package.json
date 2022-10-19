@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "typescript": "^4.8.4",
-    "unplugin-compression": "workspace:^0.0.2",
+    "unplugin-compression": "workspace:*",
     "vite": "^3.1.8"
   }
 }
