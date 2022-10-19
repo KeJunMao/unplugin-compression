@@ -14,5 +14,5 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
   },
-  externals: ["vite", "webpack"],
+  externals: ["vite", "webpack", "rollup", "esbuild"],
 });

@@ -1,5 +1,5 @@
-import type { Plugin } from "vite";
 import type { Options } from "./types";
 import unplugin from ".";
 
-export default unplugin.vite as (options?: Options | undefined) => Plugin;
+// TODO: some upstream lib failed generate invalid dts, remove the any in the future
+export default unplugin.vite as (options?: Options) => any;
