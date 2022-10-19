@@ -2,17 +2,17 @@
 
 # unplugin-compression
 
-> Compress dist to `zip`, `tar`, `taz`. Powered by [unplugin](https://github.com/unjs/unplugin).
+> 压缩 dist 为 `zip`, `tar`, `taz`. 由 [unplugin](https://github.com/unjs/unplugin) 驱动
 
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
-## Installation
+## 安装
 
 ```bash
 pnpm i -D unplugin-compression
 ```
 
-## Usage
+## 使用
 
 <details>
 <summary>Vite</summary><br>
@@ -104,32 +104,32 @@ build({
 
 <br></details>
 
-## Configuration
+## 配置
 
 ```ts
 Compression({
-    // you can use `zip`, `tar`, `taz`
+    // 可以使用 `zip`, `tar`, `taz`
     adapter: "zip"
-    // relative paths to the directory to compress
+    // 要压缩的目录的相对路径
     source: "dist"
-    // relative paths to the directory to output
+    // 要输出的目录的相对路径
     outDir: "./"
-    // compressed file name
+    // 压缩后的文件名
     formatter: "{{name}}.{{ext}}"
 })
 ```
 
 ### `adapter`
 
-Global adapter. When the source does not set the adapter, the global adapter is used.
+全局适配器。当 source 未设置适配器时，使用全局适配器。
 
-see [compressing](https://github.com/node-modules/compressing)
+更多 [compressing](https://github.com/node-modules/compressing)
 
 ### `source`
 
-The compress source, which can be set as `string` or `Source` or `Source[]`
+压缩源, 可以设置为 `string` 或 `Source` 或 `Source[]`
 
-If you use `Source` and set `adapter` or `outDir` or `formatter` options, it's cover global options.
+如果你使用 `Source` 时并配置了 `adapter` 或 `outDir` 或 `formatter` 选项, 将覆盖全局选项。
 
 ```ts
 Compression({
@@ -149,11 +149,11 @@ Compression({
 
 ### `outDir`
 
-The compressed file output dir.
+压缩文件输出目录。
 
 ### `formatter`
 
-The compressed filename formatter. default value is `{{name}}.{{ext}}`.
+压缩后的文件名格式化器。 默认值为 `{{name}}.{{ext}}`.
 
 ```ts
 interface template extends Omit<Source, "formatter"> {
@@ -162,7 +162,7 @@ interface template extends Omit<Source, "formatter"> {
 }
 ```
 
-you can also set a handler
+还可以设置为函数
 
 ```ts
 Compression({
@@ -171,7 +171,3 @@ Compression({
   },
 });
 ```
-
-## Todo
-
-- [ ] Cli
