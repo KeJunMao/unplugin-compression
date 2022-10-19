@@ -1,7 +1,8 @@
 import * as compressing from "compressing";
 import path, { resolve } from "path";
-import { FormatterOptions, Options, Source } from "../types";
-
+import { Options, Source } from "../types";
+import fs from "fs/promises";
+import { Log } from "./log";
 /**
  * normalizer source to Source[]
  */
@@ -60,11 +61,15 @@ export async function compress({
     source.map(async (s) => {
       const compressAdapter = compressing[s.adapter];
       const resolvedSource = resolve(process.cwd(), s.source);
+      const fileName = getCompressName(s);
       const resolvedOutput = path.join(
         resolve(process.cwd(), s.outDir),
-        getCompressName(s)
+        fileName
       );
       await compressAdapter.compressDir(resolvedSource, resolvedOutput);
+      const stat = await fs.stat(resolvedOutput);
+      Log.success(`${fileName}\t${stat.size} bytes`);
     })
   );
+  return true;
 }
