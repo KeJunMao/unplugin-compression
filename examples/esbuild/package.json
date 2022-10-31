@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.15.11",
+    "esbuild": "^0.15.12",
     "unplugin-compression": "workspace:*"
   }
 }
