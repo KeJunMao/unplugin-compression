@@ -11,6 +11,6 @@
   "devDependencies": {
     "typescript": "^4.8.4",
     "unplugin-compression": "workspace:*",
-    "vite": "^3.2.1"
+    "vite": "^3.2.2"
   }
 }
