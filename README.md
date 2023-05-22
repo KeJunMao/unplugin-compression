@@ -109,11 +109,11 @@ build({
 ```ts
 Compression({
     // you can use `zip`, `tar`, `taz`
-    adapter: "zip"
+    adapter: "zip",
     // relative paths to the directory to compress
-    source: "dist"
+    source: "dist",
     // relative paths to the directory to output
-    outDir: "./"
+    outDir: "./",
     // compressed file name
     formatter: "{{name}}.{{ext}}"
 })
