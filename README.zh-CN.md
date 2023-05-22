@@ -109,11 +109,11 @@ build({
 ```ts
 Compression({
     // 可以使用 `zip`, `tar`, `taz`
-    adapter: "zip"
+    adapter: "zip",
     // 要压缩的目录的相对路径
-    source: "dist"
+    source: "dist",
     // 要输出的目录的相对路径
-    outDir: "./"
+    outDir: "./",
     // 压缩后的文件名
     formatter: "{{name}}.{{ext}}"
 })
