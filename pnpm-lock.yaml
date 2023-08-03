@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -1064,9 +1068,9 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001420
+      caniuse-lite: 1.0.30001482
       electron-to-chromium: 1.4.284
-      node-releases: 2.0.6
+      node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.4)
     dev: true
 
@@ -1149,10 +1153,6 @@ packages:
 
   /call-me-maybe@1.0.1:
     resolution: {integrity: sha512-wCyFsDQkKPwwF8BDwOiWNx/9K45L/hvggQiDbve+viMNMQnWhrlYIuBk09offfwCRtCO9P6XwUttufzU11WCVw==}
-    dev: true
-
-  /caniuse-lite@1.0.30001420:
-    resolution: {integrity: sha512-OnyeJ9ascFA9roEj72ok2Ikp7PHJTKubtEJIQ/VK3fdsS50q4KWy+Z5X0A1/GswEItKX0ctAp8n4SYDE7wTu6A==}
     dev: true
 
   /caniuse-lite@1.0.30001482:
@@ -2454,10 +2454,6 @@ packages:
 
   /node-releases@2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
-    dev: true
-
-  /node-releases@2.0.6:
-    resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
     dev: true
 
   /normalize-path@3.0.0:
