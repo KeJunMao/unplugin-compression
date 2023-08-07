@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "unplugin-compression": "workspace:*",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
