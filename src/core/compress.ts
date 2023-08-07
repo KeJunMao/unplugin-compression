@@ -25,6 +25,7 @@ export function normalizerSource(
       outDir: s.outDir ?? globalOptions.outDir ?? "./",
       adapter: s.adapter ?? globalOptions.adapter ?? "zip",
       formatter: s.formatter ?? globalOptions.formatter ?? defaultFormatter,
+      compressingOptions: s.compressingOptions ?? globalOptions.compressingOptions ?? undefined
     };
   });
   return source as any;
@@ -66,7 +67,7 @@ export async function compress({
         resolve(process.cwd(), s.outDir),
         fileName
       );
-      await compressAdapter.compressDir(resolvedSource, resolvedOutput);
+      await compressAdapter.compressDir(resolvedSource, resolvedOutput, s.compressingOptions);
       const stat = await fs.stat(resolvedOutput);
       Log.success(`${fileName}\t${stat.size} bytes`);
     })

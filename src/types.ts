@@ -3,11 +3,16 @@ export type adapterType = typeof Adapter[number];
 
 export type FormatterOptions = Omit<Required<Source>, "formatter">;
 export type Formatter = string | ((options: FormatterOptions) => string);
+export type CompressingOptions = {
+  [x: string]: any;
+  ignoreBase?: boolean
+}
 export interface Source {
   source: string;
   outDir?: string;
   adapter?: adapterType;
   formatter?: Formatter;
+  compressingOptions?: CompressingOptions
 }
 export interface Options {
   /**
@@ -18,4 +23,5 @@ export interface Options {
   source?: string | Source | Source[];
   outDir?: string;
   formatter?: Formatter;
+  compressingOptions?: CompressingOptions
 }

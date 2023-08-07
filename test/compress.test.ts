@@ -120,4 +120,14 @@ describe("compress", () => {
     const isExist = existsSync(resolve(process.cwd(), "2022-10-23.tar"));
     expect(isExist).toBeTruthy();
   });
+
+  it("compress dist to dist.zip with compressingOptions", async () => {
+    await compress({
+      compressingOptions: {
+        ignoreBase: true
+      }
+    });
+    const isExist = existsSync(resolve(process.cwd(), "dist.zip"));
+    expect(isExist).toBeTruthy();
+  });
 });
