@@ -108,15 +108,15 @@ build({
 
 ```ts
 Compression({
-    // you can use `zip`, `tar`, `taz`
-    adapter: "zip",
-    // relative paths to the directory to compress
-    source: "dist",
-    // relative paths to the directory to output
-    outDir: "./",
-    // compressed file name
-    formatter: "{{name}}.{{ext}}"
-})
+  // you can use `zip`, `tar`, `taz`
+  adapter: "zip",
+  // relative paths to the directory to compress
+  source: "dist",
+  // relative paths to the directory to output
+  outDir: "./",
+  // compressed file name
+  formatter: "{{name}}.{{ext}}",
+});
 ```
 
 ### `adapter`
@@ -168,6 +168,18 @@ you can also set a handler
 Compression({
   formatter(source) {
     return `Hello.${source.adapter}`;
+  },
+});
+```
+
+### `compressingOptions`
+
+the compressing package opts. see [compressing](https://github.com/node-modules/compressing)
+
+```ts
+Compression({
+  compressingOptions: {
+    ignoreBase: true,
   },
 });
 ```

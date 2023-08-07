@@ -108,15 +108,15 @@ build({
 
 ```ts
 Compression({
-    // 可以使用 `zip`, `tar`, `taz`
-    adapter: "zip",
-    // 要压缩的目录的相对路径
-    source: "dist",
-    // 要输出的目录的相对路径
-    outDir: "./",
-    // 压缩后的文件名
-    formatter: "{{name}}.{{ext}}"
-})
+  // 可以使用 `zip`, `tar`, `taz`
+  adapter: "zip",
+  // 要压缩的目录的相对路径
+  source: "dist",
+  // 要输出的目录的相对路径
+  outDir: "./",
+  // 压缩后的文件名
+  formatter: "{{name}}.{{ext}}",
+});
 ```
 
 ### `adapter`
@@ -168,6 +168,18 @@ interface template extends Omit<Source, "formatter"> {
 Compression({
   formatter(source) {
     return `Hello.${source.adapter}`;
+  },
+});
+```
+
+### `compressingOptions`
+
+compressing 库选项，查看[compressing](https://github.com/node-modules/compressing)
+
+```ts
+Compression({
+  compressingOptions: {
+    ignoreBase: true,
   },
 });
 ```
