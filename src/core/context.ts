@@ -13,6 +13,7 @@ export class Context {
     constructor(options?: UserOptions) {
         this.options = resolveOptions(options)
         this.sources = resolveSources(this.options)
+        hooks.addHooks(this.options.hooks)
     }
 
     async compress(source: ResolvedSource) {

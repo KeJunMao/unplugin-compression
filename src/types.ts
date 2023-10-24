@@ -26,21 +26,22 @@ export interface Options {
    * Compressing adapter
    * @default "zip"
    */
-  adapter?: adapterType;
-  source?: string | Source | Source[];
-  outDir?: string;
-  formatter?: Formatter;
-  compressingOptions?: CompressingOptions
+  adapter: adapterType;
+  source: string | Source | Source[];
+  outDir: string;
+  formatter: Formatter;
+  compressingOptions: CompressingOptions
+  hooks: Partial<Hooks>;
 }
-export interface UserOptions extends Partial<Options> { }
-export interface ResolvedOptions extends Required<Omit<Options, 'compressingOptions'>> {
+export interface UserOptions extends Partial<Options> {}
+export interface ResolvedOptions extends Omit<Options, 'compressingOptions'> {
   compressingOptions: CompressingOptions | undefined
 }
 
 export interface Hooks {
-  "compress:prepare": (ctx: Context, source: ResolvedSource) => void
+  "compress:prepare": (ctx: Context, source: ResolvedSource) => void | Promise<void>
   "compress:after": (ctx: Context, source: ResolvedSource & {
     resolvedInput: string
     resolvedOutput: string
-  }) => void
+  }) => void | Promise<void>
 }

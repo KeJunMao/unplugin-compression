@@ -9,6 +9,7 @@ export function resolveOptions(options: UserOptions = {}): ResolvedOptions {
     outDir: './',
     formatter: "{{name}}.{{ext}}",
     compressingOptions: undefined,
+    hooks: {},
     ...options
   }
 }
