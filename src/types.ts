@@ -1,7 +1,9 @@
+import type { Context } from "./core/context";
+
 export const Adapter = ["tar", "tgz", "zip"] as const;
 export type adapterType = typeof Adapter[number];
 
-export type FormatterOptions = Omit<Required<Source>, "formatter">;
+export type FormatterOptions = Omit<ResolvedSource, "formatter">;
 export type Formatter = string | ((options: FormatterOptions) => string);
 export type CompressingOptions = {
   [x: string]: any;
@@ -14,6 +16,11 @@ export interface Source {
   formatter?: Formatter;
   compressingOptions?: CompressingOptions
 }
+
+export interface ResolvedSource extends Required<Omit<Source, 'compressingOptions'>> {
+  compressingOptions: CompressingOptions | undefined
+}
+
 export interface Options {
   /**
    * Compressing adapter
@@ -24,4 +31,16 @@ export interface Options {
   outDir?: string;
   formatter?: Formatter;
   compressingOptions?: CompressingOptions
+}
+export interface UserOptions extends Partial<Options> { }
+export interface ResolvedOptions extends Required<Omit<Options, 'compressingOptions'>> {
+  compressingOptions: CompressingOptions | undefined
+}
+
+export interface Hooks {
+  "compress:prepare": (ctx: Context, source: ResolvedSource) => void
+  "compress:after": (ctx: Context, source: ResolvedSource & {
+    resolvedInput: string
+    resolvedOutput: string
+  }) => void
 }
