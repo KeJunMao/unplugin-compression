@@ -1,6 +1,7 @@
 {
   "name": "unplugin-compression",
   "version": "0.0.6",
+  "packageManager": "pnpm@8.8.0",
   "homepage": "https://github.com/KeJunMao/unplugin-compression",
   "repository": {
     "type": "git",
