@@ -17,6 +17,7 @@ export default createUnplugin<Options | undefined>((options) => ({
         compressed = await compress(options);
       } catch (e) {
         Log.error(String(e));
+        console.error(e)
       }
       if (compressed) {
         Log.success("compressed success");
