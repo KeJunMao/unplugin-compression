@@ -7,6 +7,7 @@ export default defineBuildConfig({
     "src/vite",
     "src/webpack",
     "src/esbuild",
+    "src/rspack",
     "src/types",
   ],
   declaration: true,
